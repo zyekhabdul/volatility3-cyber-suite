@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "volatility3-cyber-suite"
+version = "2.0.0"
+description = "Unified Memory Forensics, eBPF Rootkit Detection, and AI-Driven Incident Triage Suite"
+readme = "README.md"
+authors = [{ name = "Zyekh Abdul Qadir Jailani", email = "zyekhabdulqadirjailani@gmail.com" }]
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: OS Independent",
+    "Topic :: Security",
+    "Topic :: System :: Networking :: Monitoring",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.28.0",
+]
+
+[project.optional-dependencies]
+ebpf = [
+    "capstone>=5.0.0",
+    "volatility3>=2.5.0",
+]
+full = [
+    "capstone>=5.0.0",
+    "volatility3>=2.5.0",
+    "requests>=2.28.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.urls]
+Homepage = "https://zyekh.com"
+Repository = "https://github.com/zyekhabdul/volatility3-cyber-suite"
+Documentation = "https://zyekh.com/blog/understanding-linux-ebpf-security-monitoring.html"
+
+[project.scripts]
+vol3-suite = "vol3_suite.cli:main"
+vol-ai-triage = "vol3_suite.cli:main"
+ebpf-detector = "vol3_suite.cli:main_ebpf"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vol3_suite*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
