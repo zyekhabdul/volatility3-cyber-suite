@@ -1,15 +1,16 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "volatility3-cyber-suite"
+name = "vol3-suite"
 version = "2.0.0"
-description = "Unified Memory Forensics, eBPF Rootkit Detection, and AI-Driven Incident Triage Suite"
+description = "⚡ Unified Memory Forensics, eBPF Rootkit Detection, and AI-Driven Incident Triage Suite"
 readme = "README.md"
 authors = [{ name = "Zyekh Abdul Qadir Jailani", email = "zyekhabdulqadirjailani@gmail.com" }]
 license = { text = "MIT" }
 classifiers = [
+    "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
