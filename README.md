@@ -11,13 +11,15 @@
        UNIFIED MEMORY FORENSICS • eBPF ROOTKIT HUNTING • AI INCIDENT TRIAGE
 ```
 
+[![PyPI Version](https://img.shields.io/pypi/v/vol3-suite.svg)](https://pypi.org/project/vol3-suite/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/vol3-suite.svg)](https://pypi.org/project/vol3-suite/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python Version](https://img.shields.io/badge/Python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue)](pyproject.toml)
 [![Tests: 22/22 Passing](https://img.shields.io/badge/Tests-22%2F22%20PASS-brightgreen)](tests/)
 [![Architecture: Zero-Dependency](https://img.shields.io/badge/Architecture-Zero--Dependency-success)](#architecture)
 [![Style: Strict No-Emoji](https://img.shields.io/badge/Aesthetic-Strict%20No--Emoji-informational)](#philosophy)
 
-**Volatility 3 Cyber Suite** is an enterprise-grade digital forensics and incident response (DFIR) framework. It consolidates advanced Volatility 3 memory triage, kernel-level eBPF rootkit detection, heuristic memory injection hunting, and automated LLM-assisted threat reporting into a single unified CLI and Python library.
+**Volatility 3 Cyber Suite (`vol3-suite`)** is an enterprise-grade digital forensics and incident response (DFIR) framework. It consolidates advanced Volatility 3 memory triage, kernel-level eBPF rootkit detection, heuristic memory injection hunting, and automated LLM-assisted threat reporting into a single unified CLI and Python library.
 
 ---
 
@@ -93,18 +95,19 @@
 
 ## [ 3. INSTALLATION ]
 
-### Standard Installation
+### Standard PyPI Installation
 ```bash
-# Clone the repository
-git clone https://github.com/zyekhabdul/volatility3-cyber-suite.git
-cd volatility3-cyber-suite
+# Core CLI & Python Library
+pip install vol3-suite
 
-# Install in editable mode
-pip install -e .
+# Full Forensic Suite (with optional Capstone disassembler & Volatility 3)
+pip install "vol3-suite[full]"
 ```
 
-### Full Installation (with optional Capstone & Volatility 3)
+### From Source
 ```bash
+git clone https://github.com/zyekhabdul/volatility3-cyber-suite.git
+cd volatility3-cyber-suite
 pip install -e ".[full]"
 ```
 
